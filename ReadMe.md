@@ -14,7 +14,7 @@ Soccer games have 3 possible outcomes within the 90 minutes of the game: team 1 
 Let's take an example:
 
 <p align="center">
-	<img src="images/psg_che.png" alt="PSG vs Chelsea" width="15%">
+	<img src="images/psg_che.png" alt="PSG vs Chelsea" width="65%">
 </p>
 
 At the time I'm writing this, the best bid/ask prices are:
@@ -33,11 +33,11 @@ There are 2 different ways to make the spread on these markets:
 
 # Visualizing the makets
 
-Let's look at the game between Atletico Madrid and Real Madrid that started at 7pm on January 8th 2026.
+Let's look at the game between Atletico Madrid (ATM) and Real Madrid (RMA) that started at 7pm on January 8th 2026.
 
 
 <p align="center">
-    <img src="images/atm_rma_summary.png" alt="ATM vs RMA summary" width="40%">
+    <img src="images/atm_rma_summary.png" alt="ATM vs RMA summary" width="60%">
 </p>
 
 This graph below shows the evolution of the price of the "Real Madrid is going to win" contract. You can see the price jumps when goals get scored.
@@ -51,6 +51,12 @@ To understand the graph better, we can zoom:
 The sudden jump and fall is due to the 2 goals that happened at the 55th and 58th minutes.
 
 
+# Approach
+
+Market making during a soccer game requires premium subscriptions to professional data providers like Opta, ESPN or Sportradar, and can cost up to tens of thousand of dollars. Without it, it is very challenging to do anything without taking too many risks as you'll constantly have stale information compared to the hedge funds that are designated market makers.
+
+That's why I chose to focus on the period before soccer games start, that way I can play on equal terms with other market participants.
+
 # Simulation Framework
 
 I built a high-fidelity simulation engine that allows:
@@ -62,32 +68,48 @@ The second point was by far the most challenging one.
 
 
 
-# Approach
+This image below shows the interaction between a market making algorithm that I've plugged to the simulation engine and the order books:
 
-Market making during a soccer game requires premium subscriptions to professional data providers like Opta, ESPN or Sportradar, and can cost up to tens of thousand of dollars. Without it, it is very challenging to do anything without taking too many risks as you'll constantly have stale information compared to the hedge funds that are designated market makers.
+<p align="center">
+    <img src="images/frame_0067.png" alt="ATM vs RMA orderbook ex" width="75%">
+</p>
 
-That's why I chose to focus on the period before soccer games start, that way I can play on equal terms with other market participants.
+Each row represent queues of the quotes on the bid (left column) and ask (right column) for the 3 markets ATM, RMA and TIE.
 
+For example, for the contract "Real Madrid is going to win (RMA)", I have 350 shares on the bid and 125 and the ask.
+
+So far, the net position is ATM: +80 | RMA: -181 | TIE: -207.
+
+Note that for all markets, the algorithm sent more shares on the side that make the positions return to neutral.
+
+A couple minutes before the game starts, the algorithm make it so that it has the same number of contracts for every outcome, because it's the best way to eliminate risk completely - to become market neutral. Indeed, if one has -100 contracts (short position) of each outcome that they sold for a total of around $100, they will owe exactly $100 in the end as one of the outcome will settle to $1 per contract.
 
 # Some strategies' results
 
+This is a result of a strategy with some specific parameters for Atletico Madrid vs Real Madrid. Net final P%L is $14.57.
+
+<p align="center">
+    <img src="images/atm_rma_res.png" alt="ATM vs RMA res" width="65%">
+</p>
 
 
 
+Here's another example with same strategy and parameters. The game is Wolverhampton FC - Manchester United on December 8th, 2025. Net final P%L is $14.57.
 
-WOL MUN
-
-Aiming have it ready to trade with real money before the 2026 FIFA World Cup.
-
-
-
+<p align="center">
+    <img src="images/wol_mun_res.png" alt="WOL vs MUN res" width="65%">
+</p>
 
 
+The average Maker fee per 100 share is around 40¢, whereas the Taker fee is around $1.50, so crossing the spread can erase the profits by a lot.
 
+**These are estimated P&Ls based on a simulation.**
 
-
-
+Strategy full backtest isn't disclosed here.
 
 
 # Appendix
+
+Aiming have it ready to trade with real money before the 2026 FIFA World Cup.
+
 This project is for research purposes only.
