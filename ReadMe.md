@@ -86,15 +86,20 @@ A couple of minutes before the game starts, the algorithm ensures that it has th
 
 # Some strategies' results
 
-Below is the result of a strategy with specific parameters for Atletico Madrid vs Real Madrid. Net final P&L is $14.57.
+Below is the result of a strategy with specific parameters for Atletic Madrid vs Real Madrid. Net final P&L is $46.08.
 
 <p align="center">
     <img src="images/atm_rma_res.png" alt="ATM vs RMA res" width="75%">
 </p>
 
+Here's another example with the same strategy and parameters, for the Inter Milan vs Liverpool FC game. Net final P&L is $46.08.
+
+<p align="center">
+    <img src="images/int_lfc_res.png" alt="INT vs LFC res" width="75%">
+</p>
 
 
-Here's another example with the same strategy and parameters. The game is Wolverhampton FC vs. Manchester United on December 8th, 2025. Net final P&L is $35.29.
+Wolverhampton FC vs. Manchester United on December 8th, 2025. Net final P&L is $35.29.
 
 <p align="center">
     <img src="images/wol_mun_res.png" alt="WOL vs MUN res" width="75%">
