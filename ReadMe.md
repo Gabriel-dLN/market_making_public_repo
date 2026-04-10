@@ -20,12 +20,12 @@ Let's take an example:
 At the time of writing, the best bid/ask prices are:
 | Market | Bid | Ask |
 |--------|-----|-----|
-| PSG    | 50  | 51  |
+| PSG    | 49  | 51  |
 | CHE    | 26  | 27  |
 | TIE    | 24  | 25  |
 
 There are 2 ways to capture the spread on these markets:
-- You sell PSG wins at 51¢, buy PSG wins at 50¢, and you immediately earn 1¢ — ignoring fees for now.
+- You sell PSG wins at 51¢, buy PSG wins at 49¢, and you immediately earn 2¢ — ignoring fees for now.
 - You sell PSG wins for 51¢, Chelsea wins at 27¢, and Tie at 25¢. You now have $1.03. At the end of the game, you will owe $1 because Kalshi markets settle at $1 if the bet was correct, so you earn 3¢ at settlement. This is one way to capture a "3D" spread.
 
 
