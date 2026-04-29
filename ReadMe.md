@@ -55,8 +55,6 @@ I chose to focus this project on **pre-game market making** rather than in-play.
 
 Pre-game is a different game. Order flow is dominated by retail price-takers, spreads are wide relative to short-term volatility, and the edge available is structural — queue priority, inventory management, and adverse selection avoidance — rather than informational. It's the same edge that scales to traditional market-making in equities, FX, and crypto.
 
-**Market-neutral by construction.** A few minutes before kickoff, the algorithm forces equal short positions across all three outcomes. For example, if it has sold 1,000 contracts of each outcome for a total of ~$100 over the quoting window, exactly one contract will settle at $1 per share — so the settlement liability is exactly $1,000 regardless of which team wins. The P&L is locked in at the spread captured during quoting, minus fees. No directional risk on the game itself.
-
 ---
 
 ## Simulation Framework
