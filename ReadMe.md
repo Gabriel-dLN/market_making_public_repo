@@ -6,6 +6,16 @@ A project summary on automated market making in pre-game soccer prediction marke
 
 ---
 
+## Contents
+
+- [Concepts](#concepts)
+- [Visualizing the Markets](#visualizing-the-markets)
+- [Approach](#approach)
+- [Simulation Framework](#simulation-framework)
+- [Results](#results)
+
+---
+
 ## Concepts
 
 A soccer game has three possible outcomes within regulation time: team 1 wins, team 2 wins, or a draw. Each outcome trades as a separate contract on Kalshi, settling at $1 if correct and $0 otherwise. Each contract has its own order book.
